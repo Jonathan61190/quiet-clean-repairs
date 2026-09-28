@@ -17,10 +17,10 @@ const areas = [
   "Galleria", "Spring Branch", "Katy", "Sugar Land", "The Woodlands", "Pearland",
 ];
 
-const reviews = [ // SAMPLE TEXT: replace with real customer reviews before launch
-  ["Sample review: replace with a real customer quote about arriving on time and leaving the house spotless.", "Customer name, Heights"],
-  ["Sample review: replace with a real quote about a repair that looked seamless.", "Customer name, Bellaire"],
-  ["Sample review: replace with a real quote about clear pricing and communication.", "Customer name, Katy"],
+const standards = [
+  ["On time", "We give you an arrival window and call ahead if anything changes."],
+  ["Clean when we leave", "Floor protection goes down first, and we vacuum before we go."],
+  ["Clear pricing", "You get a written estimate before any work starts."],
 ];
 
 export default function Home() {
@@ -97,11 +97,15 @@ export default function Home() {
         <section id="reviews" className="section tint">
           <div className="wrap">
             <h2>Reviews</h2>
+            <p className="sub">Every customer gets the same three promises. After the job, we&apos;d love to hear how we did.</p>
             <div className="grid">
-              {reviews.map(([q, n]) => (
-                <figure key={n} className="card quote"><blockquote>{q}</blockquote><figcaption>{n}</figcaption></figure>
+              {standards.map(([t, d]) => (
+                <article key={t} className="card"><h3>{t}</h3><p>{d}</p></article>
               ))}
             </div>
+            <p style={{ marginTop: "2rem" }}>
+              <a className="btn" href="#contact">Book your repair</a>
+            </p>
           </div>
         </section>
 
